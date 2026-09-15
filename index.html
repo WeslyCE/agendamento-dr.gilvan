@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agendar consulta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #ede6d9;
+    --surface: #fbf8f1;
+    --ink: #171310;
+    --ink-soft: #6b5946;
+    --accent: #d2622e;
+    --accent-deep: #ac4d22;
+    --gold: #efc067;
+    --line: #e0d6c0;
+    --radius: 4px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page{
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 56px 24px 72px;
+  }
+
+  .botanical{
+    width: 92px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    color: var(--accent);
+  }
+
+  .hero{
+    text-align: center;
+    margin-bottom: 44px;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: rise .7s ease-out forwards;
+  }
+
+  @keyframes rise{
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .hero{ animation: none; opacity: 1; transform: none; }
+  }
+
+  h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(26px, 6vw, 32px);
+    line-height: 1.2;
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+
+  .lede{
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    max-width: 34ch;
+    margin: 0 auto;
+  }
+
+  form{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+  }
+
+  label{
+    display: block;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  textarea{
+    display: block;
+    width: 100%;
+    margin-top: 7px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    padding: 8px 2px;
+    border-radius: 0;
+  }
+
+  input:focus,
+  textarea:focus{
+    outline: none;
+    border-bottom-color: var(--accent);
+  }
+
+  textarea{ resize: vertical; min-height: 64px; }
+
+  fieldset{
+    border: none;
+    padding: 0;
+    margin: 0 0 18px;
+  }
+
+  legend{
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 0;
+    margin-bottom: 9px;
+  }
+
+  .radio-row{
+    display: flex;
+    gap: 20px;
+  }
+
+  .radio-option{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14.5px;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .radio-option input{
+    accent-color: var(--accent);
+    width: 16px;
+    height: 16px;
+    margin: 0;
+  }
+
+  button{
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px 16px;
+    background: var(--accent);
+    color: var(--surface);
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    letter-spacing: .01em;
+    cursor: pointer;
+    transition: background .15s ease;
+  }
+
+  button:hover{ background: var(--accent-deep); }
+
+  button:focus-visible{
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  .footnote{
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 20px;
+    padding: 0 12px;
+  }
+
+  .footnote strong{ color: var(--accent-deep); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="hero">
+    <svg class="botanical" viewBox="0 0 120 90" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M60,42 C50,18 26,8 15,17 C5,25 12,44 29,51 C40,55 53,51 60,42 Z"/>
+      <path d="M60,42 C52,58 34,66 23,60 C14,55 17,44 28,40 C38,37 52,38 60,42 Z"/>
+      <g transform="translate(120,0) scale(-1,1)">
+        <path d="M60,42 C50,18 26,8 15,17 C5,25 12,44 29,51 C40,55 53,51 60,42 Z"/>
+        <path d="M60,42 C52,58 34,66 23,60 C14,55 17,44 28,40 C38,37 52,38 60,42 Z"/>
+      </g>
+      <rect x="58" y="18" width="4" height="42" rx="2"/>
+    </svg>
+    <h1>Consulta com Dr. Gilvan Almeida</h1>
+    <p class="lede">Atendimento homeopático, presencial ou online. Preencha os dados abaixo e a Dioney confirma seu horário pelo WhatsApp.</p>
+  </div>
+
+  <form id="agendaForm">
+
+    <label>
+      Nome completo
+      <input type="text" name="nome" required>
+    </label>
+
+    <label>
+      WhatsApp para contato
+      <input type="tel" name="whatsapp" placeholder="(85) 9 0000-0000" required>
+    </label>
+
+    <fieldset>
+      <legend>Tipo de consulta</legend>
+      <div class="radio-row">
+        <label class="radio-option"><input type="radio" name="tipo" value="Presencial" checked> Presencial</label>
+        <label class="radio-option"><input type="radio" name="tipo" value="Online"> Online</label>
+      </div>
+    </fieldset>
+
+    <label>
+      Data e horário de preferência
+      <input type="text" name="data" placeholder="Ex: quinta-feira à tarde" required>
+    </label>
+
+    <label>
+      Motivo da consulta (opcional)
+      <textarea name="motivo" placeholder="Conte brevemente o que te motiva a buscar a consulta"></textarea>
+    </label>
+
+    <button type="submit">Agendar pelo WhatsApp</button>
+
+  </form>
+
+  <p class="footnote">Ao enviar, você abre o WhatsApp com a mensagem pronta para confirmar com <strong>Dioney</strong>, secretária do consultório.</p>
+
+</div>
+
+<script>
+  const WHATSAPP_NUMBER = "5585999458901";
+
+  document.getElementById('agendaForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const nome = data.get('nome').trim();
+    const whatsapp = data.get('whatsapp').trim();
+    const tipo = data.get('tipo');
+    const dataConsulta = data.get('data').trim();
+    const motivo = data.get('motivo').trim();
+
+    let mensagem = `Olá, Dioney! Me chamo ${nome} e gostaria de agendar uma consulta com o Dr. Gilvan Almeida.\n\n`;
+    mensagem += `Telefone para contato: ${whatsapp}\n`;
+    mensagem += `Tipo de consulta: ${tipo}\n`;
+    mensagem += `Data/horário de preferência: ${dataConsulta}\n`;
+    mensagem += `Motivo: ${motivo ? motivo : 'Não informado'}`;
+
+    const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
+    window.location.href = link;
+  });
+</script>
+
+</body>
+</html>
